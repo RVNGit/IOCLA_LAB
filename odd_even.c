@@ -3,13 +3,14 @@
 
 void print_binary( int number ) {
 	int n = 0;
-	char str[32];		
-	while (number) {
-		if( number & 1) 
+	char str[32];	
+	unsigned int bin = (unsigned int)number;
+	while (bin) {
+		if( bin & 1) 
 			*(str + n) = 1;
 		else
 			*(str + n) = 0;
-		number = number >> 1;
+		bin = bin >> 1;
 		n++;
 	}
 	while (n) {
